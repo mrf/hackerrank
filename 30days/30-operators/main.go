@@ -12,24 +12,25 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(mealCost)
 	scanner.Scan()
 	tipPercent, err := strconv.ParseFloat(scanner.Text(), 64)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(tipPercent)
 	scanner.Scan()
 	taxPercent, err := strconv.ParseFloat(scanner.Text(), 64)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(taxPercent)
 
 	var tip float64
 	tip = (mealCost * (tipPercent / 100))
-	fmt.Println(tip)
 	var tax float64
 	tax = (mealCost * (taxPercent / 100))
-	fmt.Println(tax)
+	var totalCost float64
+	var intTotalCost int
+	totalCost = mealCost + tip + tax
+	// Trick to round up no matter what
+	intTotalCost = int(totalCost + .5)
+	fmt.Println("The total meal cost is", intTotalCost, "dollars.")
 }
