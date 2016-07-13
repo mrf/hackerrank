@@ -4,6 +4,7 @@ import "fmt"
 import "bufio"
 import "os"
 import "strconv"
+import "strings"
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -13,13 +14,9 @@ func main() {
 		fmt.Println(err)
 	}
 	scanner.Scan()
-	numbers := scanner.Text()
-	fmt.Println(length)
-	arr := [length]int{1, 3, 4, 5}
-	fmt.Println(arr)
-	/*
-		for number in arr {
-			fmt.Println(number)
-		}
-	*/
+	numbers := strings.Fields(scanner.Text())
+
+	for i := length - 1; i > -1; i-- {
+		fmt.Printf("%s ", numbers[i])
+	}
 }
