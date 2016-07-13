@@ -3,7 +3,6 @@ package main
 import "fmt"
 import "bufio"
 import "os"
-import "strconv"
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -21,13 +20,11 @@ func main() {
 		}
 
 		for _, character := range even {
-			s := strconv.QuoteRune(character)
-			fmt.Print(string(s))
+			fmt.Printf("%c", character)
 		}
 		fmt.Printf(" ")
 		for _, character := range odd {
-			s := strconv.QuoteRune(character)
-			fmt.Print(string(s))
+			fmt.Printf("%c", character)
 		}
 		fmt.Println()
 	}
