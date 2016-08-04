@@ -26,14 +26,16 @@ func main() {
 
 		m[pieces[0]] = number
 	}
-	fmt.Println(m)
+
 	// Search continues until it doesn't
 	for scanner.Scan() {
-		fmt.Println(scanner.Text())
 		search := scanner.Text()
 		// TODO if name matches print out name=value
-		if m[search] {
-			fmt.Println(m[search])
+		if m[search] > 0 {
+			fmt.Print(search, "=", m[search])
+		} else {
+			fmt.Print("Not found")
 		}
+		fmt.Println()
 	}
 }
